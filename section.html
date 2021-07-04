@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            width: 70%;
+            margin: 20px auto;
+            background-color: black;
+        }
+        .accordion{
+            padding: 20px 10px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            background-color: #eee;
+        }
+        .content{
+            padding: 10px;
+            display: none;
+            overflow: auto;
+            background-color: white;
+            height: 40vh;
+        }
+        .active,.accordion:hover{
+            background-color: #aaa;
+        }
+        .light{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="light" ></div>
+    <div class="section">
+    <button class="accordion">Section1</button>
+    <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et error maiores exercitationem tenetur cupiditate consectetur reiciendis dolor molestias quaerat voluptates quibusdam quos aut perferendis sequi illum nihil, quasi, iusto ut. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio reprehenderit sapiente laborum veniam cumque libero aspernatur eius cupiditate exercitationem eaque sequi assumenda dolorem sint nulla, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui placeat autem eveniet, ipsa similique. Harum aperiam omnis eos minus maiores in optio odit sed perferendis cupiditate eligendi, ipsum suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit voluptatem non, vero cumque eius itaque voluptatum quis facilis molestiae. Eaque assumenda nesciunt doloremque ipsa amet ea necessitatibus at veritatis nam. vitae eligendi quisquam nam illo! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quo provident rem at eveniet, doloribus dolorum. Delectus natus a quisquam similique quasi voluptatum itaque, voluptatibus, numquam magni blanditiis aperiam aliquid.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quasi dolorum, porro, facere odio, labore quisquam consequuntur quos voluptate ad neque laudantium minus amet? Itaque a voluptatum eveniet ab et.
+    </div>
+    <button class="accordion">Section2</button>
+    <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et error maiores exercitationem tenetur cupiditate consectetur reiciendis dolor molestias quaerat voluptates quibusdam quos aut perferendis sequi illum nihil, quasi, iusto ut. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio reprehenderit sapiente laborum veniam cumque libero aspernatur eius cupiditate exercitationem eaque sequi assumenda dolorem sint nulla, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim qui placeat autem eveniet, ipsa similique. Harum aperiam omnis eos minus maiores in optio odit sed perferendis cupiditate eligendi, ipsum suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit voluptatem non, vero cumque eius itaque voluptatum quis facilis molestiae. Eaque assumenda nesciunt doloremque ipsa amet ea necessitatibus at veritatis nam. vitae eligendi quisquam nam illo! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quo provident rem at eveniet, doloribus dolorum. Delectus natus a quisquam similique quasi voluptatum itaque, voluptatibus, numquam magni blanditiis aperiam aliquid.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quasi dolorum, porro, facere odio, labore quisquam consequuntur quos voluptate ad neque laudantium minus amet? Itaque a voluptatum eveniet ab et.
+    </div>
+    <button class="accordion">Section3</button>
+    <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quasi dolorum, porro, facere odio, labore quisquam consequuntur quos voluptate ad neque laudantium minus amet? Itaque a voluptatum eveniet ab et.
+    </div>
+</div>
+    <script>
+    var a=document.getElementsByClassName('accordion');
+    for(var i=0;i<a.length;i++){
+    a[i].addEventListener('click',function(){
+    this.classList.toggle('active');
+    var b=this.nextElementSibling;
+    if(b.style.display==='block'){
+        b.style.display="none";
+    }
+    else{
+        b.style.display='block';
+    }
+    })
+    }
+    var action=document.querySelector('.light');
+    // var color='white';
+    action.addEventListener('click',function(){
+        var change=this.classList.toggle('action');
+        var boby=document.body;
+        if(boby.style.backgroundColor==='black'){
+            boby.style.backgroundColor='white';
+            action.style.backgroundColor='black'
+        }
+        else{
+            boby.style.backgroundColor='black';
+            action.style.backgroundColor='white';
+        }
+    })
+</script>
+</body>
+</html>

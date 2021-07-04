@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorFlipper</title>
+    <style>
+        .container{
+            height: 100%;
+            display: grid;
+            place-content: center center;
+        }
+        h2{
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border:2px solid cyan;
+            border-radius: 5px;
+        }
+        .btn{
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Flipper</h1>
+    <div class="container">
+        <h2>
+            backgroundColor : 
+            <span class="color">violet</span>
+        </h2>
+        <button  class="btn" id="btn">Click</button>
+    </div>
+    <div class="container">
+        <h2>
+            backgroundColor : 
+            <span class="color-hex">#100945</span>
+        </h2>
+        <button  class="btn" id="btn-hex">Click</button>
+    </div>
+    <script>
+        var colors=['red','blue','yellowgreen','violet','tomato','gray','cyan'];
+       var button= document.getElementById('btn');
+       var color=document.querySelector('.color');
+       button.addEventListener('click',function(){
+           let a=colors[randamNumber()];
+           color.innerHTML=a;
+           document.body.style.backgroundColor=a;
+       })
+       function randamNumber(){
+           var b= parseInt(Math.random()*colors.length);
+          return b;
+       }
+       var hex=['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+       var btn=document.getElementById('btn-hex');
+       var color_hex=document.querySelector('.color-hex');
+       btn.addEventListener('click',function(){
+        let hexsym='#'; 
+        for(a=0;a<6;a++){
+        hexsym+=hex[random()];
+        }
+            color_hex.textContent=hexsym;
+           document.body.style.backgroundColor=hexsym;
+       })
+       function random(){
+           var x=parseInt(Math.random()*hex.length);
+           return x;
+       }
+    </script>
+</body>
+</html>

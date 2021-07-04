@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar responsive</title>
+    <script src="https://kit.fontawesome.com/de6a0670bd.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        header{
+           background-color: #ada421;
+           position: relative;
+           display: inline-block;
+           width: 100%;
+        }
+        .logo{
+            float:left;
+            padding: 15px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        nav{
+            float: right;
+            padding: 10px 40px ;
+        }
+        nav ul li{
+            float: left;
+        }
+        nav ul li a{
+            display: inline-block;
+            padding: 10px;
+            color: black;
+        }
+        nav ul li a:hover{
+            background-color: #a34f12;
+        }
+        span{
+            font-size: 22px;
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            display: none;
+        }
+     @media screen and (max-width:900px){
+        #click{
+            display: block;
+        }
+         header{
+             display:grid ;
+         }
+         nav {
+             display: none;
+         }
+         .nav{
+             display: block;
+             margin: 20px;
+             padding: 0%;
+             border-top:2px solid oldlace;
+             transition: 1s;
+         }
+         .nav ul li{
+             display: block;
+             width: 100%;
+             text-align: center;
+         }
+         .nav ul li a{
+             display: block;
+             width: 100%;
+         }
+         .nav ul li a:hover{
+            background-color: #a34f12;
+         }
+       
+     }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>Wales</h2>
+            <span id="click"><i class="fas fa-rocket"></i></span>
+            <!-- <span id="click2" ><i class="fas fa-sun"></i></span> -->
+        </div>
+           
+        <nav id="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Count</a></li>
+                <li><a href="#">Service</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        var a=document.getElementById('click');
+        a.addEventListener('click',function(){
+            document.getElementById('nav').classList.toggle('nav')  ;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #header{
+            background-color: blue;
+            padding: 12px 8px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .leapyear{
+            padding: 12px;
+        }
+        .active{
+            background-color: chartreuse;
+        }
+        .notactive{
+            background-color: blue;
+        }
+        button{
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Leap Year</h1>
+    </div>
+    <!-- <button onclick="result()" id="find">find</button> -->
+    <div class="leapyear">
+        <label for="a">Enter the year :</label>
+        <input type="number" name="" min='1' max='10000' id="year">
+        <input onclick="result()" style="padding:5 px3px;" type="submit" value='find'>
+    </div>
+    <script>
+        // var find=document.getElementById('find');
+        function result(){
+            const value=document.getElementById('year').value;
+            if(value%4!=0){
+              document.getElementById('header').style.background='tomato';
+              document.getElementById('header').innerHTML='<h1> 😏 I am not a Leap Year</h1> '
+            }
+            else if(value%400==0){
+                document.getElementById('header').style.background='lightgreen';
+                document.getElementById('header').innerHTML=' <h1>😄 I am a Leap Year</h1> '
+            }
+           else if(value%100==0){
+                document.getElementById('header').style.background='tomato';
+                document.getElementById('header').innerHTML=' <h1>😏 I am not a Leap Year</h1> '
+            }
+            else{
+                document.getElementById('header').style.background='lightgreen';
+                document.getElementById('header').innerHTML=' <h1>😄 I am a Leap Year</h1> '
+            }}
+    </script>
+</body>
+</html>
