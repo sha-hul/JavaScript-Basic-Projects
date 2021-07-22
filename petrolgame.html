@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Petrol_Game</title>
-  <style>
-    *{
-      padding: 0%;
-      margin: 0;
-      box-sizing: border-box;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petrol_Game</title>
 </head>
 <body>
-  <p id="gameResult"></p>
-  <p id="game"></p>
-  <button onclick="show()">Show</button>
-  <script>
-  var gameResult=document.getElementById("gameResult");
-  var game=document.getElementById("game");
-  let show=()=>{
-    game.textContent=gameOutput();
-  }
-  // First Two Line of the Output
-  // Game
-  let gameOutput=()=>{
+    <button onclick="startGame()">Run</button>
+    <p id="gameResult"></p>
+    <script>
+       var gameResult=document.getElementById("gameResult");
+       const initialPetrol=50;
+
+       let startGame=()=>{
+        gameResult.innerHTML=" ";  
+        gameResult.textContent=gameOutput();
+       }
+       let gameOutput=()=>{
+    let refillPetrol=30;
+    
     var arr=new Array();
     for(var a=1;a<7;a++){
     let random = parseInt(Math.ceil(Math.random()*100));
@@ -44,7 +38,6 @@
       kiloMeter=kiloMeter+distance;
       var petrol= distance*2;
       initialPetrol-=petrol;
-    
       if(initialPetrol<0)
       {
         document.write(`Move ${move} - car at ${kiloMeter}km,petrol remaining 0,game over :(</br>`)
@@ -60,6 +53,6 @@
     ${arr[4]}<br/>
     ${arr[5]}<br/>`)
   }
-  </script>
+    </script>
 </body>
 </html>
